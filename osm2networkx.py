@@ -18,14 +18,14 @@ from shapely.geometry import LineString,Point,mapping
 ''' Load the database configuration.
 '''
 try:
-    with open('.dbconfig','r') as file:
-        config=json.load(file)
+    with open('.dbconfig', 'r') as file:
+        config = json.load(file)
 except IOError:
-    print   """ There is no .dbconfig file.
+    print(""" There is no .dbconfig file.
                 Modify and paste the following into the working directory to create the file.
                 with open('.dbconfig','w') as file:
                     json.dump({'dbname':'osm_gb','host':'localhost','user':'username','password':'password'},file,indent=True)
-            """
+            """)
 
 def folder(place):
     ''' Returns the folder where settings for a place are saved.
